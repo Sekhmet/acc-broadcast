@@ -17,9 +17,6 @@ class WebSocketsClient:
             while True:
                 await self.update(websocket, self.gameInfo.read())
 
-                greeting = await websocket.recv()
-                print(f"< {greeting}")
-
                 await asyncio.sleep(REFRESH_RATE)
 
     async def authenticate(self, websocket, identifier):
